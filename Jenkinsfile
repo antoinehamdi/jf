@@ -6,9 +6,11 @@ pipeline {
 		maven "maven3"
 	}
 	stages {
-		stage('1') {
+		stage('checkout') {
 			steps {
-				sh "echo 1"
+				git branch: 'dev',
+    			    credentialsId: 'ed8c2959-59cf-42c3-ac22-1b25026d26f0',
+                    url: 'https://github.com/antoinehamdi/jf.git'
 			}
 		}
 		stage('2') {
@@ -19,7 +21,6 @@ pipeline {
 		stage('3') {
 			steps {
 				sh "echo 3"
-				"mv /tmp/lol.mdr /opt/"
 			}
 		}
 	}
