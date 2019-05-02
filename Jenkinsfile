@@ -2,6 +2,7 @@ pipeline {
 	agent {
 		label "master"
 	}
+
 	tools {
 		maven "maven3"
 	}
@@ -21,9 +22,9 @@ pipeline {
 				sh "mvn test"
 			}
 		}
-		stage('3') {
+		stage('build') {
 			steps {
-				sh "echo 3"
+				sh "mvn install"
 			}
 		}
 	}
