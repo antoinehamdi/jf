@@ -5,6 +5,9 @@ pipeline {
 	tools {
 		maven "maven3"
 	}
+	options {
+		timestamps()
+	}
 	stages {
 		stage('checkout') {
 			steps {
@@ -15,7 +18,8 @@ pipeline {
 		}
 		stage('test') {
 			steps {
-				mvn test
+				MVN_CMD="mvn test"
+				${MVN_CMD}
 			}
 		}
 		stage('3') {
