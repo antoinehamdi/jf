@@ -29,9 +29,10 @@ pipeline {
 		}
 		stage('deploy') {
 			steps {
-				
-    				sh 'mvn -s settings.xml deploy'
-				
+				configFileProvider(
+    				[configFile(fileId: '9253f13d-e2f6-4041-b855-9bc2ee3f0b2b', variable: 'MAVEN_SETTINGS')]) {
+    				sh 'mvn -s $MAVEN_SETTINGS deploy'
+				}
 			}
 		}
 	}
