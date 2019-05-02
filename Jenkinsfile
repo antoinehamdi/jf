@@ -10,7 +10,7 @@ pipeline {
 			steps {
 				git branch: 'dev',
     			    credentialsId: 'ed8c2959-59cf-42c3-ac22-1b25026d26f0',
-                    url: 'https://github.com/antoinehamdi/jf.git'
+                    url: 'VIVE LE PSG'
 			}
 		}
 		stage('2') {
