@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage('checkout') {
 			steps {
-
+				sh "echo 1"
 			}
 		}
 		stage('2') {
