@@ -13,9 +13,9 @@ pipeline {
                     url: 'https://github.com/antoinehamdi/hits.git'
 			}
 		}
-		stage('2') {
+		stage('test') {
 			steps {
-				sh "echo 2"
+				mvn test
 			}
 		}
 		stage('3') {
