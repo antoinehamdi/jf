@@ -18,8 +18,7 @@ pipeline {
 		}
 		stage('test') {
 			steps {
-				MVN_CMD="mvn test"
-				${MVN_CMD}
+				sh "mvn test"
 			}
 		}
 		stage('3') {
