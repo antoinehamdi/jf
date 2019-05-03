@@ -17,38 +17,9 @@ pipeline {
                     url: 'https://github.com/antoinehamdi/hits.git'
 			}
 		}
-		stage('test') {
+		stage('echo') {
 			steps {
-				sh "mvn clean test"
-			}
-		}
-		stage ('Incremental Build') {
-            when {
-                not { stage 'test' }
-            }
-            steps {
-            	sh "echo HIHI"
-            }
-        }
-        stage ('Incremental Build2') {
-            when {
-                not { stage 'test' }
-            }
-            steps {
-            	sh "echo HAHA"
-            }
-        }
-		stage('build') {
-			steps {
-				sh "mvn clean install"
-			}
-		}
-		stage('deploy') {
-			steps {
-				configFileProvider(
-    				[configFile(fileId: '9253f13d-e2f6-4041-b855-9bc2ee3f0b2b', variable: 'MAVEN_SETTINGS')]) {
-    				sh 'mvn -s $MAVEN_SETTINGS deploy'
-				}
+				sh "echo VOILA"
 			}
 		}
 	}
