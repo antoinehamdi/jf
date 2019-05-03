@@ -6,10 +6,11 @@ pipeline {
 
 	options {
 		timestamps()
+        parallelsAlwaysFailFast()
 	}
 	stages {
 		stage ('Incremental Build') {
-            failFast true
+            
             parallel {
             	stage('In Parallel 1') {
             		tools {
