@@ -17,11 +17,13 @@ pipeline {
 	                } 
                     steps {
                         sh "mvn -v"
+                        sh "echo 1"
                     }
                 }
                 stage('In Parallel 2') {
                     steps {
                         sh "echo 2"
+                        sh "sleep 1"
                     }
                 }
             }
