@@ -1,0 +1,29 @@
+pipeline {
+	agent {
+		label "master"
+	}
+
+
+	options {
+		timestamps()
+	}
+	stages {
+		stage ('Incremental Build') {
+            stages {
+            	stage('In Parallel 1') {
+            		tools {
+		                maven "maven3"
+	                } 
+                    steps {
+                        sh "mvn -v"
+                    }
+                }
+                stage('In Parallel 2') {
+                    steps {
+                        sh "echo 2"
+                    }
+                }
+            }
+        }
+	}
+}
