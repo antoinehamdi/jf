@@ -16,6 +16,8 @@ pipeline {
 		                maven "maven3"
 	                } 
                     steps {
+                        sh "sleep 2"
+                        sh "exit 1"
                         sh "mvn -v"
                         sh "echo 1"
                     }
