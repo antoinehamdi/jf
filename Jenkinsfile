@@ -30,7 +30,7 @@ pipeline {
             	sh "echo HIHI"
             }
         }
-        stage ('Incremental Build') {
+        stage ('Incremental Build2') {
             when {
                 not { stage 'test' }
             }
