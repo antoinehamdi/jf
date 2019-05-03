@@ -22,22 +22,7 @@ pipeline {
 				sh "mvn clean test"
 			}
 		}
-		stage ('Incremental Build') {
-            when {
-                not { stage 'test' }
-            }
-            steps {
-            	sh "echo HIHI"
-            }
-        }
-        stage ('Incremental Build2') {
-            when {
-                not { stage 'test' }
-            }
-            steps {
-            	sh "echo HAHA"
-            }
-        }
+
 		stage('build') {
 			steps {
 				sh "mvn clean install"
